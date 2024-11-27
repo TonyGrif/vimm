@@ -10,7 +10,7 @@ class Vault:
         console: The game console for this vault
     """
 
-    def __init__(self, console: str, validate: bool = False) -> None:
+    def __init__(self, console: str, validate: bool = True) -> None:
         """Constructor for the Vault object
 
         Args:
