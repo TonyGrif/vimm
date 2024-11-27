@@ -1,6 +1,6 @@
 [project]
 name = "vimm"
-version = "0.0.9"
+version = "0.9.0"
 description = "Scraper for the vimm.net website"
 readme = "README.md"
 requires-python = ">=3.9"
