@@ -19,6 +19,7 @@ dev = [
     "pytest-cov>=6.0.0",
     "ruff>=0.8.0",
     "types-beautifulsoup4>=4.12.0.20241020",
+    "pdoc>=15.0.0",
 ]
 
 [tool.pytest.ini_options]
@@ -39,6 +40,8 @@ _type = "mypy scripts/ vault/"
 _pylint = "pylint scripts/ vault/"
 _check = "ruff check scripts/ vault/"
 lint = ["_check", "_type", "_pylint"]
+docs = "pdoc -d google vault/"
+pubdocs = "pdoc -d google vault/ -o docs/"
 
 [build-system]
 requires = ["hatchling"]
