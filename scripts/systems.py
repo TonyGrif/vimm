@@ -12,7 +12,7 @@ from typing import List
 import httpx
 from bs4 import BeautifulSoup
 
-VAULT_URL = "https://vimm.net/vault"
+VAULT_URL = 'https://vimm.net/vault'
 
 
 def get_available_systems() -> List[str]:
@@ -24,15 +24,15 @@ def get_available_systems() -> List[str]:
 def _parse(res: str) -> List[str]:
     """Find systems in HTTP response"""
     systems = []
-    soup = BeautifulSoup(res, "html.parser")
+    soup = BeautifulSoup(res, 'html.parser')
 
-    for elem in soup.find_all("td"):
-        if anchor := elem.find("a"):
-            idx = anchor["href"].rfind("/")
-            systems.append(anchor["href"][idx + 1 :])
+    for elem in soup.find_all('td'):
+        if anchor := elem.find('a'):
+            idx = anchor['href'].rfind('/')
+            systems.append(anchor['href'][idx + 1 :])
 
     return systems
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     print(get_available_systems())
