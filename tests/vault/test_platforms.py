@@ -26,4 +26,10 @@ class TestAvailablePlatformScraper:
         assert consoles[13].designation == "Console"
 
     def test_handhelds(self, scraper):
-        pytest.skip()
+        handhelds = scraper.handhelds
+
+        assert len(handhelds) == 8
+        assert handhelds[4].name == "Game Boy Color"
+        assert handhelds[4].year == 1998
+        assert handhelds[4].link is not None
+        assert handhelds[4].designation == "Handheld"
