@@ -33,8 +33,8 @@ class AvailablePlatformScraper:
             TBW
         """
         self._platforms: Optional[List[Platform]] = None
-        self._consoles = None
-        self._handhelds = None
+        self._consoles: List[Platform] = []
+        self._handhelds: List[Platform] = []
 
     @property
     def platforms(self) -> List[Platform]:
@@ -49,7 +49,7 @@ class AvailablePlatformScraper:
     @property
     def consoles(self) -> List[Platform]:
         """Return all the home consoles available on Vimm"""
-        raise NotImplementedError
+        return [value for value in self.platforms if value.designation == "Console"]
 
     @property
     def handhelds(self) -> List[Platform]:
@@ -75,8 +75,8 @@ class AvailablePlatformScraper:
                     Platform(
                         name=values[0].find("a").text,
                         link=f"https://vimm.net{values[0].find('a')['href']}",
-                        year=values[1].text,
-                        designation=table.find("caption").text,
+                        year=int(values[1].text),
+                        designation=table.find("caption").text[:-1],
                     )
                 )
 
