@@ -54,7 +54,7 @@ class AvailablePlatformScraper:
     @property
     def handhelds(self) -> List[Platform]:
         """Return all the handheld platforms on Vimm"""
-        raise NotImplementedError
+        return [value for value in self.platforms if value.designation == "Handheld"]
 
     def _make_request(self, verify: bool = False) -> str:
         res = httpx.get("https://vimm.net/vault", verify=verify)
