@@ -27,7 +27,7 @@ class AvailablePlatformScraper:
     """
 
     def __init__(self) -> None:
-        """Constructor for the PlatformScraper
+        """Constructor for the AvailablePlatformScraper
 
         Args:
             TBW
