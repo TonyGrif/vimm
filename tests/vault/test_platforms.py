@@ -12,9 +12,9 @@ class TestAvailablePlatformScraper:
     def test_platforms(self, scraper):
         platforms = scraper.platforms
 
-        assert len(platforms) == 32
+        assert len(platforms) == 33
         assert platforms[0].name == "Atari 2600"
-        assert platforms[-1].name == "PlayStation Portable"
+        assert platforms[-1].name == "Nintendo 3DS"
 
     def test_consoles(self, scraper):
         consoles = scraper.consoles
@@ -28,7 +28,7 @@ class TestAvailablePlatformScraper:
     def test_handhelds(self, scraper):
         handhelds = scraper.handhelds
 
-        assert len(handhelds) == 8
+        assert len(handhelds) == 9
         assert handhelds[4].name == "Game Boy Color"
         assert handhelds[4].year == 1998
         assert handhelds[4].link is not None
